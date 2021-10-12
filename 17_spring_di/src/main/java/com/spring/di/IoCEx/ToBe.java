@@ -1,4 +1,4 @@
-package com.spring.di.IoXEx;
+package com.spring.di.IoCEx;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

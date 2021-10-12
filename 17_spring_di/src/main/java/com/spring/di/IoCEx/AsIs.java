@@ -1,4 +1,4 @@
-package com.spring.di.IoXEx;
+package com.spring.di.IoCEx;
 
 class AsIsDao {}
 

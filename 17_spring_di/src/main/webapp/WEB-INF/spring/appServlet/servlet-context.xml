@@ -23,6 +23,105 @@
 	
 	<context:component-scan base-package="com.spring.di" />
 	
+	<beans:bean id="pdMgr" class="com.spring.di.ProductManagerEx2" />
+	
+	<beans:bean id="product4" class="com.spring.di.Product" />
+	
+	<beans:bean id="product5" class="com.spring.di.Product">
+		<beans:property name="pdCd"   value="0x005"/>	
+		<beans:property name="pdNm"   value="스마트 tv"/>	
+		<beans:property name="deptCd" value="sales5"/>	
+		<beans:property name="deptNm" value="영업부5"/>	
+		<beans:property name="mgrNm"  value="홍길동"/>	
+	</beans:bean>
+
+	<beans:bean id="product6" class="com.spring.di.Product">
+		<beans:property name="pdCd"   value="0x006"/>	
+		<beans:property name="pdNm"   value="스마트 냉장고"/>	
+		<beans:property name="deptCd" value="sales6"/>	
+		<beans:property name="deptNm" value="영업부6"/>	
+		<beans:property name="mgrNm"  value="홍길동"/>	
+	</beans:bean>
+	
+	<beans:bean id="diSampleClass1_1"  class="com.spring.di.DiSampleClass1">
+		<beans:property name="id"   value="qwer1234" />
+		<beans:property name="pw"   value="q1w2e3r4" />
+		<beans:property name="name" value="팀 버너스 리" />
+	</beans:bean> 	
+	
+	<beans:bean id="diSampleClass1_2"  class="com.spring.di.DiSampleClass1">
+		<beans:property name="id"   value="wwww1234" />
+		<beans:property name="pw"   value="1q2w3e4r" />
+		<beans:property name="name" value="제임스 고슬링" />
+	</beans:bean> 	
+	
+	<beans:bean id="resourceTester"  class="com.spring.di.DiSampleClass1">
+		<beans:property name="id"   value="abcd1234" />
+		<beans:property name="pw"   value="qwer1234" />
+		<beans:property name="name" value="데니스 리치" />
+	</beans:bean> 	
+	
+	<beans:bean id="diSampleClass2_1"  class="com.spring.di.DiSampleClass2">
+		<beans:constructor-arg ref="diSampleClass1_1" />
+	</beans:bean>
+	<beans:bean id="diSampleClass2_2"  class="com.spring.di.DiSampleClass2">
+		<beans:constructor-arg ref="diSampleClass1_2" />
+	</beans:bean>
+	<beans:bean id="diSampleClass2_3"  class="com.spring.di.DiSampleClass2">
+		<beans:constructor-arg ref="resourceTester" />
+	</beans:bean>
+	
+	<beans:bean id="diSampleClass3" class="com.spring.di.DiSampleClass3">
+		
+		<beans:property name="testList">
+			<beans:list>
+				<beans:value>list1</beans:value>
+				<beans:value>list2</beans:value>
+				<beans:value>list3</beans:value>			
+			</beans:list>
+		</beans:property>
+		
+		<beans:property name="testMap">
+			<beans:map>
+				<beans:entry>
+					<beans:key>
+						<beans:value>key1</beans:value>
+					</beans:key>
+					<beans:value>val1</beans:value>
+				</beans:entry>
+				<beans:entry>
+					<beans:key>
+						<beans:value>key2</beans:value>
+					</beans:key>
+					<beans:value>val2</beans:value>
+				</beans:entry>
+			</beans:map>
+		</beans:property>
+		
+		<beans:property name="testMapObj">
+			<beans:map>
+				<beans:entry>
+					<beans:key>
+						<beans:value>Obj1</beans:value>
+					</beans:key>
+					<beans:ref bean="diSampleClass1_1"></beans:ref>
+				</beans:entry>
+				<beans:entry>
+					<beans:key>
+						<beans:value>Obj2</beans:value>
+					</beans:key>
+					<beans:ref bean="diSampleClass1_2"></beans:ref>
+				</beans:entry>
+				<beans:entry>
+					<beans:key>
+						<beans:value>Obj3</beans:value>
+					</beans:key>
+					<beans:ref bean="resourceTester"></beans:ref>
+				</beans:entry>
+			</beans:map>
+		</beans:property>
+	</beans:bean> 
+	
 	
 	
 </beans:beans>

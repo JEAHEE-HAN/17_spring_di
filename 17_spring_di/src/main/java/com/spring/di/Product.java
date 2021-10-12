@@ -14,6 +14,11 @@ import org.springframework.stereotype.Component;
 	- Component("이름)을 생략할 경우 클래스의 앞글자를 소문자로 변경하여 이름이 지정된다.
 	   Ex) Product > @Component("product")
 	       Goods   > @Component("goods")
+	       
+	- (중요)servelet-context.xml 파일의 <context:component-scan base-package="패키지명" />의 지정된 경로에 
+      컴포넌트 등록이 있어야 컴포넌트 스캔이 가능하다.
+    
+    - @Component 외 @Controller , @Service , @Repository , @Aspect , @Configuration 어노테이션도 컴포넌트 스캔 대상이 된다.
 
 */
 

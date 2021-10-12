@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class SpringDiEx03 {
 
 	@Autowired
-	private Product product1;
+	private Product product4;
 	
 	@Autowired
-	private Product product2;
+	private Product product5;
 	
 	@Inject
-	private Product product3;
+	private Product product6;
 	
 	@Autowired
 	private ProductManagerEx2 pdMgr;
@@ -30,7 +30,13 @@ public class SpringDiEx03 {
 	public String springDiEx03() {
 		
 		System.out.println("\n springDiEx03 \n");
-		pdMgr.setProduct(product1); 	// product2, product3
+		pdMgr.setProduct(product4); 	// product2, product3
+		pdMgr.printInfo();
+		
+		pdMgr.setProduct(product5); 	// product2, product3
+		pdMgr.printInfo();
+		
+		pdMgr.setProduct(product6); 	// product2, product3
 		pdMgr.printInfo();
 		
 		return "home";
